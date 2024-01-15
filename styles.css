@@ -1,0 +1,271 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.loading-container{
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loading-bar{
+    height: 20px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    position: relative;
+    width: 20%;
+}
+.loading-bar span {
+    display: block;
+    height: 100%;
+    width: 0;
+    background-color: #4caf50;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: load 5s linear infinite;
+  }
+
+  @keyframes load {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+
+header {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 100px;
+}
+
+header img {
+    max-width: 200px;
+    width: 100%;
+}
+
+.my-div {
+    background-color: #195ECA;
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    padding: 20px 0;
+}
+
+.content{
+    padding: 0px 100px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.my-div2 {
+    background-color: #195ECA;
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    padding-bottom: 30px;
+}
+
+.content2{
+    padding: 0px 100px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}
+.listing-section {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.listing-container {
+    display: flex;
+    flex-direction: row; 
+    background-color: #FEFFEC;
+    width: 100%;
+    padding: 50px;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.11);
+}
+
+.company-name{
+    padding: 10px 0px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.listing-left {
+    flex: 1;
+    padding-right: 50px;
+}
+
+.listing-left img {
+    max-width: 200px;
+    height: auto;
+}
+
+.listing-info {
+    flex: 2;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+.quote-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.quote-button:hover{
+    background-color: #195ECA;
+}
+
+.listing-right {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.compare-rates-button{
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+/*  Footer */
+footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 100px;
+}
+
+footer a{
+    color: #cc3366;;
+}
+
+.left-footer{
+    float: left;
+}
+
+.right-footer{
+    float: right;
+}
+.california-consumer{
+    padding: 10px 0;
+}
+.california-consumer a{
+    text-decoration: none;
+}
+
+
+@media screen and (max-width: 1000px) {
+    header {
+        padding: 10px 5px;
+    }
+
+    .content {
+        font-size: 16px;
+        padding: 30px 30px;
+        text-align: center;
+    }
+
+    header img {
+        max-width: 150px;
+    }
+
+    .my-div2 {
+        display: flex;
+        background-color: white;
+    }
+
+    .content2 {
+        color: black;
+        font-size: 15px;
+        font-weight: 0;
+        padding: 10px 30px;
+        text-align: center;
+    }
+
+    .second-paragraph {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+
+    .listing-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+        display: flex;
+    }
+
+    .listing-info{
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .company-description{
+        text-align: left;
+        font-size: 13px;
+        padding: 10px 0;
+    }
+
+    .company-name{
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0px;
+    }
+
+    .listing-left{
+        text-align: center;
+        padding: 0px 20px;
+    }
+
+    .listing-left img {
+        max-width: 70%;
+    }
+
+    .view-quote-button {
+        padding: 10px;
+    }
+    
+
+    footer{
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 20px;
+    }
+
+    .left-footer, .right-footer{
+        float: none;
+        text-align: center;
+        font-size: 13px;
+    }
+
+    .loading-bar{
+        width: 50%;
+    }
+   
+}
