@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(){
     
-    // const apiURL = 'http://localhost:3000/'; //Enable this only if you will run in localhost
-    const apiURL = 'https://listings-nine.vercel.app';
+    const apiURL = 'http://localhost:3000/';
+    
     const requestData = {
         api_key: "S2Wb7copHTe3fRgcDLVOmKsuesmFb88jSo7z33dK",
         campaign: "a998ed",
