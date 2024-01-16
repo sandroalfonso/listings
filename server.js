@@ -4,7 +4,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
 const axios = require('axios');
-const port = process.env.PORT || 3000;
+const port = 3000;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -30,7 +30,7 @@ app.post('/', async (req, res) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
-    res.header('Access-Control-Allow-Private-Network', 'true');
+
     
     res.header('Access-Control-Allow-Private-Network', 'true');
     
