@@ -1,9 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
     
-
-    const apiURL = "https://api.mtlmrtb.com/bids/v1/get-bids";
-    const proxyURL = "https://cors-anywhere.herokuapp.com/";
-
+    const apiURL = 'http://localhost:3000/';
 
     const requestData = {
         api_key: "S2Wb7copHTe3fRgcDLVOmKsuesmFb88jSo7z33dK",
@@ -44,8 +41,8 @@ document.addEventListener("DOMContentLoaded", function(){
             }
         ]
     };
-    const url = `${proxyURL}${apiURL}?em=${requestData.person[0].email}&fn=${requestData.person[0].first_name}&ln=${requestData.person[0].last_name}&ph=${requestData.person[0].phone}&s1=247lg&s2=${requestData.source}&st=${requestData.person[0].residence.address.state}&zp=${requestData.person[0].residence.address.zipcode}&p=2`;
-    // const url = `${apiURL}?em=${requestData.person[0].email}&fn=${requestData.person[0].first_name}&ln=${requestData.person[0].last_name}&ph=${requestData.person[0].phone}&s1=247lg&s2=${requestData.source}&st=${requestData.person[0].residence.address.state}&zp=${requestData.person[0].residence.address.zipcode}&p=2`;
+    const url = `${apiURL}?em=${requestData.person[0].email}&fn=${requestData.person[0].first_name}&ln=${requestData.person[0].last_name}&ph=${requestData.person[0].phone}&s1=247lg&s2=${requestData.source}&st=${requestData.person[0].residence.address.state}&zp=${requestData.person[0].residence.address.zipcode}&p=2`;
+    // const url = `${apiURL}`;
     const loadingPage = document.querySelector("#loading-page");
     const mainPage = document.querySelector("#main-page");
     fetch(url, {
@@ -58,17 +55,22 @@ document.addEventListener("DOMContentLoaded", function(){
         body: JSON.stringify(requestData)
     })
         .then(response => response.json())
-        .then(data => {
+        .then((data) => {
           console.log(data);
           const fnameElement = document.getElementById("fname");
           fnameElement.textContent = requestData.person[0].first_name;
           loadingPage.style.display = "none";
           mainPage.style.display = "block";
-          data.bids.forEach((listingData, index) => {
+    
+          if (data.apiData && data.apiData.bids && Array.isArray(data.apiData.bids)) {
+            data.apiData.bids.forEach((listingData, index) => {
               const section = createListingSection(listingData, index);
               document.getElementById("my-listings").appendChild(section);
-          });
-      })
+            });
+          } else {
+            console.error('Invalid or missing data.apiData.bids:', data.apiData.bids);
+          }
+        })
         .catch(error => {
             console.error(error);
         });
