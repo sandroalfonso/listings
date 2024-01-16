@@ -27,10 +27,10 @@ app.post('/', async (req, res) => {
 
     const apiResponse = await axios.post('https://api.mtlmrtb.com/bids/v1/get-bids', requestData);
     console.log('API Response', apiResponse);
-    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Origin', 'https://capable-sunburst-aaf2fa.netlify.app');
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
-
+    res.header('Access-Control-Allow-Private-Network', 'true');
     
     res.header('Access-Control-Allow-Private-Network', 'true');
     
